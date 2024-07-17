@@ -22,4 +22,4 @@ RUN poetry install
 EXPOSE 8000
 
 # Run the prestart script and start the server
-CMD ["sh", "-c", "poetry run uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload"]
+CMD ["sh", "-c", "poetry run uvicorn app.main:app --host 10.0.2.15 --port 8000 --reload"]
