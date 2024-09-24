@@ -1,28 +1,35 @@
-version: '3'
-services:
-  frontend:
-    build: ./frontend
-    container_name: frontend
-    ports:
-      - "5173:80"
+version: '3.8'
 
+services:
   backend:
-    build: ./backend
-    container_name: backend
+    build:
+      context: ./backend
+    container_name: fastapi_app
     ports:
       - "8000:8000"
+    depends_on:
+      - db
+    env_file:
+      - ./backend/.env
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: nodejs_app
+    ports:
+      - "5173:5173"
+    env_file:
+      - ./frontend/.env
 
   db:
-    image: postgres:13
-    container_name: db
-    environment:
-      POSTGRES_USER: app
-      POSTGRES_PASSWORD: admin123
-      POSTGRES_DB: app
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
+    image: postgres:latest
+    container_name: postgres_db
     ports:
       - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    env_file:
+      - ./backend/.env
 
   adminer:
     image: adminer
@@ -32,17 +39,23 @@ services:
 
   proxy:
     image: jc21/nginx-proxy-manager:latest
-    container_name: proxy
+    container_name: nginx_proxy_manager
     ports:
       - "80:80"
       - "443:443"
-      - "81:81" # For Nginx Proxy Manager UI
+      - "81:81"
     environment:
       DB_SQLITE_FILE: "/data/database.sqlite"
     volumes:
       - ./data:/data
       - ./letsencrypt:/etc/letsencrypt
+    depends_on:
+      - db
+      - backend
+      - frontend
+      - adminer
 
 volumes:
   postgres_data:
-
+  data:
+  letsencrypt:
