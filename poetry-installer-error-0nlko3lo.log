@@ -1,0 +1,42 @@
+Collecting poetry==1.8.3
+  Using cached poetry-1.8.3-py3-none-any.whl.metadata (6.8 kB)
+Collecting build<2.0.0,>=1.0.3 (from poetry==1.8.3)
+  Using cached build-1.2.2-py3-none-any.whl.metadata (6.2 kB)
+Collecting cachecontrol<0.15.0,>=0.14.0 (from cachecontrol[filecache]<0.15.0,>=0.14.0->poetry==1.8.3)
+  Using cached cachecontrol-0.14.0-py3-none-any.whl.metadata (3.1 kB)
+Collecting cleo<3.0.0,>=2.1.0 (from poetry==1.8.3)
+  Using cached cleo-2.1.0-py3-none-any.whl.metadata (12 kB)
+Collecting crashtest<0.5.0,>=0.4.1 (from poetry==1.8.3)
+  Using cached crashtest-0.4.1-py3-none-any.whl.metadata (1.1 kB)
+Collecting dulwich<0.22.0,>=0.21.2 (from poetry==1.8.3)
+  Downloading dulwich-0.21.7-cp312-cp312-win_amd64.whl.metadata (4.4 kB)
+Collecting fastjsonschema<3.0.0,>=2.18.0 (from poetry==1.8.3)
+  Using cached fastjsonschema-2.20.0-py3-none-any.whl.metadata (2.1 kB)
+Collecting installer<0.8.0,>=0.7.0 (from poetry==1.8.3)
+  Using cached installer-0.7.0-py3-none-any.whl.metadata (936 bytes)
+Collecting keyring<25.0.0,>=24.0.0 (from poetry==1.8.3)
+  Using cached keyring-24.3.1-py3-none-any.whl.metadata (20 kB)
+Collecting packaging>=23.1 (from poetry==1.8.3)
+  Using cached packaging-24.1-py3-none-any.whl.metadata (3.2 kB)
+Collecting pexpect<5.0.0,>=4.7.0 (from poetry==1.8.3)
+  Using cached pexpect-4.9.0-py2.py3-none-any.whl.metadata (2.5 kB)
+Collecting pkginfo<2.0,>=1.10 (from poetry==1.8.3)
+  Using cached pkginfo-1.11.1-py3-none-any.whl.metadata (11 kB)
+Collecting platformdirs<5,>=3.0.0 (from poetry==1.8.3)
+  Using cached platformdirs-4.3.6-py3-none-any.whl.metadata (11 kB)
+Collecting poetry-core==1.9.0 (from poetry==1.8.3)
+  Using cached poetry_core-1.9.0-py3-none-any.whl.metadata (3.5 kB)
+INFO: pip is looking at multiple versions of poetry to determine which version is compatible with other requirements. This could take a while.
+ERROR: Ignored the following versions that require a different python version: 0.6.2 Requires-Python >=2.7.0.0,<2.8.0.0,>=3.4.0.0,<4.0.0.0; 0.6.3 Requires-Python >=2.7.0.0,<2.8.0.0,>=3.4.0.0,<4.0.0.0
+ERROR: Could not find a version that satisfies the requirement poetry-plugin-export<2.0.0,>=1.6.0 (from poetry) (from versions: none)
+ERROR: No matching distribution found for poetry-plugin-export<2.0.0,>=1.6.0
+
+Traceback:
+
+  File "<stdin>", line 923, in main
+  File "<stdin>", line 560, in run
+  File "<stdin>", line 582, in install
+  File "<stdin>", line 685, in install_poetry
+  File "<stdin>", line 375, in pip
+  File "<stdin>", line 372, in python
+  File "<stdin>", line 365, in run
